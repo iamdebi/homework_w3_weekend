@@ -11,11 +11,11 @@ CREATE TABLE customers(
 CREATE TABLE films(
   id SERIAL PRIMARY KEY,
   title VARCHAR,
-  price INT,
+  price INT
 );
 
 CREATE TABLE tickets(
   id SERIAL PRIMARY KEY,
-  cust_id INT REFERENCES customers(id),
-  film_id INT REFERENCES films(id),
-);
+  cust_id INT REFERENCES customers(id) ON DELETE CASCADE,
+  film_id INT REFERENCES films(id) ON DELETE CASCADE
+)
