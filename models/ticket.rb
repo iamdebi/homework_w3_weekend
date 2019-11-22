@@ -20,4 +20,5 @@ class Ticket
     SqlRunner.run(sql)
   end
 
+
 end
