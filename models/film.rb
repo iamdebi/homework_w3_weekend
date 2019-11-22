@@ -10,7 +10,8 @@ class Film
   end
 
   def save()
-    sql = "INSERT INTO films (title, price) VALUES ($1, $2) RETURNING id;"
+    sql = "INSERT INTO films (title, price)
+    VALUES ($1, $2) RETURNING id;"
     values = [@title, @price]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i()
@@ -28,13 +29,18 @@ class Film
   end
 
   def customers()
-    sql = "SELECT customers.* FROM customers INNER JOIN tickets ON customers.id = cust_id WHERE film_id = $1"
+    sql = "SELECT customers.* FROM customers
+     INNER JOIN tickets ON
+     customers.id = cust_id
+     WHERE film_id = $1"
     values = [@id]
     customers = SqlRunner.run(sql, values)
     result = customers.map{|customer| Customer.new(customer)}
   end
 
-  # def  number_of_customers
+  def  number_of_customers
+    self.customers.length()
+  end
 
 
 end
