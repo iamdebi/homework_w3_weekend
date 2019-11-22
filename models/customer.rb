@@ -1,4 +1,4 @@
-class customer
+class Customer
 
   attr_accessor :name, :funds
   attr_reader :id
