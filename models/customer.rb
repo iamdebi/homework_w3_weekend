@@ -2,6 +2,7 @@ require_relative('../db/runner')
 
 
 
+
 class Customer
 
   attr_accessor :name, :funds
@@ -43,6 +44,10 @@ class Customer
     self.funds -= film.price
     self.update
     return self
+  end
+
+  def number_of_films
+    self.films.length()
   end
 
 end
