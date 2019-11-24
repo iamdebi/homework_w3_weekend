@@ -84,6 +84,15 @@ ticket5 = Ticket.new(
 )
 ticket5.save()
 
+screening1 = Screening.new(
+  {'show_time' => '18:30',
+    'availability' => 5,
+    'ticket_id' => ticket1.id
+    'film_id' => ticket1.film_id,
+    'cust_id' => ticket1.cust_id
+  }
+)
+
 
 binding.pry
 

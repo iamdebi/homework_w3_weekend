@@ -1,6 +1,6 @@
 class Screening
 
-  attr_reader :id, :film_id, :ticket_id
+  attr_reader :id, :film_id, :ticket_id, :cust_id
   attr_accessor :show_time, :availability
 
   def initialize(details)
@@ -9,6 +9,7 @@ class Screening
     @availability = details['availability']
     @film_id = details['film_id']
     @ticket_id = details['ticket_id']
+    @cust_id = details['cust_id']
   end
 
 end
