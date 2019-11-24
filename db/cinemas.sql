@@ -20,3 +20,11 @@ CREATE TABLE tickets(
   cust_id INT REFERENCES customers(id) ON DELETE CASCADE,
   film_id INT REFERENCES films(id) ON DELETE CASCADE
 )
+
+CREATE TABLE screening(
+  id SERIAL PRIMARY KEY,
+  show_time TIME, #HH:MM:SS
+  availibility INT,
+  film_id INT REFERENCES films(id) ON DELETE CASCADE,
+  ticket_id INT REFERENCES films(id) ON DELETE CASCADE,
+);
