@@ -2,6 +2,7 @@ require('pry')
 require_relative('models/customer')
 require_relative('models/ticket')
 require_relative('models/film')
+require_relative('models/screening')
 
 Customer.delete_all()
 Ticket.delete_all()
@@ -338,72 +339,30 @@ ticket28 = Ticket.new(
   }
 )
 ticket28.save()
-#
-# screening1 = Screening.new(
-#   {'show_time' => '18:30',
-#     'availability' => 5,
-#     'ticket_id' => ticket1.id,
-#     'film_id' => ticket1.film_id,
-#     'cust_id' => ticket1.cust_id
-#   }
-# )
-#
-#
-#   screening2 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket1.id,
-#       'film_id' => ticket1.film_id,
-#       'cust_id' => ticket1.cust_id
-#     }
-#   )
-#
-#   screening3 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket2.id,
-#       'film_id' => ticket2.film_id,
-#       'cust_id' => ticket2.cust_id
-#     }
-#   )
-#
-#   screening4 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket1.id,
-#       'film_id' => ticket1.film_id,
-#       'cust_id' => ticket1.cust_id
-#     }
-#   )
-#
-#   screening5 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket1.id,
-#       'film_id' => ticket1.film_id,
-#       'cust_id' => ticket1.cust_id
-#     }
-#   )
-#
-#   screening6 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket1.id,
-#       'film_id' => ticket1.film_id,
-#       'cust_id' => ticket1.cust_id
-#     }
-#   )
-#
-#   screening7 = Screening.new(
-#     {'show_time' => '18:30',
-#       'availability' => 5,
-#       'ticket_id' => ticket1.id,
-#       'film_id' => ticket1.film_id,
-#       'cust_id' => ticket1.cust_id
-#     }
-#   )
-#
-#
+
+screening1 = Screening.new(
+  {'show_time' => '18:30',
+    'availability' => 5,
+    'film_id' => ticket1.film_id
+  }
+)
+screening1.save()
+
+  screening2 = Screening.new(
+    {'show_time' => '18:30',
+      'availability' => 5,
+      'film_id' => ticket1.film_id
+    }
+  )
+  screening2.save()
+
+  screening3 = Screening.new(
+    {'show_time' => '18:30',
+      'availability' => 5,
+      'film_id' => ticket2.film_id
+    }
+  )
+screening3.save()
 
 binding.pry
 

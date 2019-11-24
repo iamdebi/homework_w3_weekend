@@ -6,7 +6,7 @@ class Ticket
   def initialize(details)
     @id = details['id'] if details ['id']
     @cust_id = details['cust_id']
-    @film_id = details['film_id']
+    @film_id = details['screening_id']
   end
 
   def save()

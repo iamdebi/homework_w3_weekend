@@ -8,8 +8,15 @@ class Screening
     @show_time = details['show_time']
     @availability = details['availability']
     @film_id = details['film_id']
-    @ticket_id = details['ticket_id']
-    @cust_id = details['cust_id']
+  end
+
+  def save()
+    sql = "INSERT INTO screenings
+    (show_time, availability, film_id)
+    VALUES ($1, $2, $3) RETURNING id;"
+    values = [@show_time, @availability, @film_id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|result| Screening.new(result)}
   end
 
 end
